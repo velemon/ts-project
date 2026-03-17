@@ -1,0 +1,27 @@
+<div class="courses-container">
+  <h2>Kurser</h2>
+
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Sök kurs..." />
+  <button (click)="searchCourses()">Sök</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Kurskod</th>
+        <th>Kursnamn</th>
+        <th>Ämne</th>
+        <th>Poäng</th>
+        <th>Lägg till</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of filteredCourses">
+        <td>{{ course.courseCode }}</td>
+        <td>{{ course.courseName }}</td>
+        <td>{{ course.subject }}</td>
+        <td>{{ course.points }}</td>
+        <td><button (click)="addToSchedule(course)">Lägg till</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
