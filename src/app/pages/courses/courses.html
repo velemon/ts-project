@@ -1,27 +1,57 @@
 <div class="courses-container">
   <h2>Kurser</h2>
 
-  <input type="text" [(ngModel)]="searchTerm" placeholder="Sök kurs..." />
-  <button (click)="searchCourses()">Sök</button>
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Filtrera kurser..." (input)="searchCourses()" />
 
-  <table>
-    <thead>
-      <tr>
-        <th>Kurskod</th>
-        <th>Kursnamn</th>
-        <th>Ämne</th>
-        <th>Poäng</th>
-        <th>Lägg till</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let course of filteredCourses">
-        <td>{{ course.courseCode }}</td>
-        <td>{{ course.courseName }}</td>
-        <td>{{ course.subject }}</td>
-        <td>{{ course.points }}</td>
-        <td><button (click)="addToSchedule(course)">Lägg till</button></td>
-      </tr>
-    </tbody>
-  </table>
+    <select [(ngModel)]="selectedSubject" (change)="searchCourses()">
+      <option value="">Alla ämnen</option>
+      <option *ngFor="let subject of subjects" [value]="subject">
+        {{ subject }}
+      </option>
+    </select>
+
+    <button (click)="searchCourses()">Sök</button>
+  </div>
+
+  <p class="result-info">
+    Visar {{ paginatedCourses.length }} av {{ filteredCourses.length }} kurser
+  </p>
+
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Kurskod</th>
+          <th>Kursnamn</th>
+          <th>Ämne</th>
+          <th>Poäng</th>
+          <th>Lägg till</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of paginatedCourses">
+          <td data-label="Kurskod">{{ course.courseCode }}</td>
+          <td data-label="Kursnamn">{{ course.courseName }}</td>
+          <td data-label="Ämne">{{ course.subject }}</td>
+          <td data-label="Poäng">{{ course.points }}</td>
+          <td>
+            <button (click)="addToSchedule(course)">Lägg till</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination" *ngIf="filteredCourses.length > 0">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">
+      Föregående
+    </button>
+
+    <span>Sida {{ currentPage }} av {{ totalPages }}</span>
+
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      Nästa
+    </button>
+  </div>
 </div>

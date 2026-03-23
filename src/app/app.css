@@ -1,16 +1,27 @@
 nav {
-  background-color: #f0f0f0;
-  padding: 10px;
+  background-color: #f8f9fa;
+  padding: 14px 20px;
   text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 
 nav a {
-  margin: 0 15px;
+  display: inline-block;
+  margin: 0 12px;
+  padding: 8px 14px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   color: #333;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 nav a:hover {
+  background-color: #e9ecef;
   color: #007bff;
+}
+
+h1 {
+  margin-bottom: 16px;
+  text-align: center;
 }

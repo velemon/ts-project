@@ -17,6 +17,10 @@ export class CoursesComponent {
   courses: Course[] = [];
   filteredCourses: Course[] = [];
   searchTerm = '';
+  selectedSubject: string = '';
+  subjects: string[] = [];
+  currentPage = 1;
+  itemsPerPage = 10;
 
   constructor(
     private courseService: CourseService,
@@ -25,13 +29,47 @@ export class CoursesComponent {
     this.courseService.getCourses().subscribe(data => {
       this.courses = data;
       this.filteredCourses = data;
+
+      this.subjects = [...new Set(data.map(c => c.subject))];
     });
   }
 
   searchCourses() {
     this.filteredCourses = this.courses.filter(c =>
-      c.courseName.toLowerCase().includes(this.searchTerm.toLowerCase())
+      (
+        c.courseName.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        c.courseCode.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        c.subject.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        c.syllabus.toLowerCase().includes(this.searchTerm.toLowerCase())
+      ) &&
+      (
+        this.selectedSubject === '' ||
+        c.subject === this.selectedSubject
+      )
     );
+
+    this.currentPage = 1;
+  }
+
+  get paginatedCourses(): Course[] {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    return this.filteredCourses.slice(start, start + this.itemsPerPage);
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.filteredCourses.length / this.itemsPerPage);
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
   }
 
   addToSchedule(course: Course) {

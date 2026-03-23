@@ -3,4 +3,5 @@ export interface Course {
   subject: string;
   courseName: string;
   points: number;
+  syllabus: string;
 }

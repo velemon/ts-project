@@ -1,5 +1,5 @@
 <div class="schedule-container">
-  <h1>Ditt ramschema</h1>
+  <h2>Ditt ramschema</h2>
 
   <p *ngIf="schedule.length === 0">Inga kurser tillagda ännu.</p>
 
@@ -15,10 +15,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let course of schedule">
-        <td>{{ course.courseCode }}</td>
-        <td>{{ course.courseName }}</td>
-        <td>{{ course.subject }}</td>
-        <td>{{ course.points }}</td>
+        <td data-label="Kurskod">{{ course.courseCode }}</td>
+        <td data-label="Kursnamn">{{ course.courseName }}</td>
+        <td data-label="Ämne">{{ course.subject }}</td>
+        <td data-label="Poäng">{{ course.points }}</td>
         <td><button (click)="removeCourse(course)">Ta bort</button></td>
       </tr>
     </tbody>
