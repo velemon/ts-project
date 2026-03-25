@@ -67,6 +67,19 @@ th {
   background-color: #d3d3d3;
 }
 
+.click-title {
+  text-decoration: underline;
+  background-color: #d3d3d3;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.click-title:hover {
+  background-color: #d0e4ff;  
+  color: #000;
+}
+
 tbody tr:nth-child(even) {
   background-color: #fafafa;
 }

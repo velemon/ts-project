@@ -22,10 +22,10 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Kurskod</th>
-          <th>Kursnamn</th>
-          <th>Ämne</th>
-          <th>Poäng</th>
+          <th class="click-title" (click)="sortBy('courseCode')">Kurskod</th>
+          <th class="click-title" (click)="sortBy('courseName')">Kursnamn</th>
+          <th class="click-title" (click)="sortBy('subject')">Ämne</th>
+          <th class="click-title" (click)="sortBy('points')">Poäng</th>
           <th>Lägg till</th>
         </tr>
       </thead>
