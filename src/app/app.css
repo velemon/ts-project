@@ -25,3 +25,8 @@ h1 {
   margin-bottom: 16px;
   text-align: center;
 }
+
+#logo {
+  display: block;
+  margin: 20px auto;
+}
