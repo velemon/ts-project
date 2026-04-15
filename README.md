@@ -21,7 +21,7 @@ Kurserna skall presenteras på ett tydligt tillgängligt sätt, och det ska finn
 *Att filtrera data på kurskod och kursnamn.
 *Att välja ut kurser från ämne - exempelvis; bara visa kurser som tillhör ämnet "Datateknik"
 *Lägga till kurser till eget ramschema.
-*Se antal kurser i aktuell sökning, exempelvis alla kurser, eller antal kurser i valt urval (ex hur många kurser det blir om enbart "Datateknik"-kurser visas.
+*Se antal kurser i aktuell sökning, exempelvis alla kurser, eller antal kurser i valt urval tex hur många kurser det blir om enbart "Datateknik"-kurser visas.
 
 ###Krav för ramschema
 Ramschemat skall presenteras på ett tydligt tillgängligt sätt, och det ska finnas möjlighet att:
