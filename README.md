@@ -14,7 +14,7 @@ Jag har endast satsat på att uppfylla grundkraven för projektuppgiften vilket 
 * Källkodens skall versionshanteras med Git.
 * Den färdiga lösning skall publiceras till publikt tillgänglig webbhost.
 
-###Krav för kurser
+### Krav för kurser
 Kurserna skall presenteras på ett tydligt tillgängligt sätt, och det ska finnas möjlighet att:
 
 * Kunna sortera data på kurskod, kursnamn, poäng, ämne.
@@ -23,7 +23,7 @@ Kurserna skall presenteras på ett tydligt tillgängligt sätt, och det ska finn
 * Lägga till kurser till eget ramschema.
 * Se antal kurser i aktuell sökning, exempelvis alla kurser, eller antal kurser i valt urval tex hur många kurser det blir om enbart "Datateknik"-kurser visas.
 
-###Krav för ramschema
+### Krav för ramschema
 Ramschemat skall presenteras på ett tydligt tillgängligt sätt, och det ska finnas möjlighet att:
 
 * Se valda kurser till ramschemat (dessa ska lagras i localStorage).
@@ -31,7 +31,7 @@ Ramschemat skall presenteras på ett tydligt tillgängligt sätt, och det ska fi
 * Att kunna plocka bort kurser från ramschemat.
 * Samtliga ändringar i ramschamat skall lagras/uppdateras i localStorage (alternativt se nedan), och laddas in på nytt vid sidomladdning.
 
-##Mål
+## Mål
 * Angular ska användas som ramverk och TypeScript som programmeringsspråk.
 * Källkoden skall versionshanteras med Git, och den färdiga webbplatsen skall publiceras på valfri webbhost.
 * Kunna läsa in externt data, behandla detta och presentera på skärm.
