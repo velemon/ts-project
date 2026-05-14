@@ -1,9 +1,11 @@
 <div class="courses-container">
   <h2>Kurser</h2>
 
+  // Sökfält och filter
   <div class="search-bar">
     <input type="text" [(ngModel)]="searchTerm" placeholder="Filtrera kurser..." (input)="searchCourses()" />
 
+    // Ämnesfilter
     <select [(ngModel)]="selectedSubject" (change)="searchCourses()">
       <option value="">Alla ämnen</option>
       <option *ngFor="let subject of subjects" [value]="subject">
@@ -14,10 +16,12 @@
     <button (click)="searchCourses()">Sök</button>
   </div>
 
+  // Resultatinfo
   <p class="result-info">
     Visar {{ paginatedCourses.length }} av {{ filteredCourses.length }} kurser
   </p>
 
+  // Kurslista
   <div class="table-wrapper">
     <table class="table">
       <thead>
@@ -43,6 +47,7 @@
     </table>
   </div>
 
+  // Pagination controls
   <div class="pagination" *ngIf="filteredCourses.length > 0">
     <button (click)="previousPage()" [disabled]="currentPage === 1">
       Föregående

@@ -1,8 +1,10 @@
 <div class="schedule-container">
   <h2>Ditt ramschema</h2>
 
+  // Visa ett meddelande om inga kurser har lagts till
   <p *ngIf="schedule.length === 0">Inga kurser tillagda ännu.</p>
 
+  // Visa schemat i en tabell om det finns kurser
   <table *ngIf="schedule.length > 0">
     <thead>
       <tr>
@@ -24,5 +26,6 @@
     </tbody>
   </table>
 
+  // Visa den totala poängen om det finns kurser i schemat
   <p *ngIf="schedule.length > 0">Totalt högskolepoäng: {{ totalPoints() }}</p>
 </div>

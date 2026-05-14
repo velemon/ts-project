@@ -1,3 +1,6 @@
+/* Styles for the courses page of the application. It includes styles for the container, 
+headings, search bar, table, pagination, and responsive design for smaller devices.*/
+
 .courses-container {
   max-width: 1100px;
   margin: 20px auto;
@@ -108,7 +111,7 @@ tbody tr:hover {
   color: #555;
 }
 
-
+/* Responsive styles for smaller devices */
 @media (max-width: 768px) {
   table {
     border: 0;
