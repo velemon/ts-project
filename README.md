@@ -36,3 +36,6 @@ Ramschemat skall presenteras på ett tydligt tillgängligt sätt, och det ska fi
 * Källkoden skall versionshanteras med Git, och den färdiga webbplatsen skall publiceras på valfri webbhost.
 * Kunna läsa in externt data, behandla detta och presentera på skärm.
 * Kunna använda tidigare moment i kursen i en större sammanhängande webbplats.
+
+## Länk till webbplats
+https://comforting-dasik-7154ae.netlify.app/
